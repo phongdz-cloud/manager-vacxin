@@ -21,8 +21,9 @@ public class VaccinationHistory {
     private Date startTime;
     private Date endTime;
     //Many To One
-
+    private Vaccination vaccination;
     // Many To One
     private Patient patient;
-
+    //One To One vaccinationTransaction
+    private VaccinationTransaction vaccinationTransaction;
 }

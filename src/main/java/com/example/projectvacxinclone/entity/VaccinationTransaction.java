@@ -7,12 +7,14 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
-@Document(collection = "account_role")
-public class AccountRole {
+@AllArgsConstructor
+@Document(collection = "vaccination_transaction")
+public class VaccinationTransaction {
     @Id
-    private String accountRoleId;
-    private Account account;
-    private Role role;
+    private String vaccinationTransactionId;
+    // One to One
+    private VaccinationHistory vaccinationHistory;
+    private Double price;
+    private Long quantity;
 }

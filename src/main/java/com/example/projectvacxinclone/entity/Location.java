@@ -6,13 +6,18 @@ import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.Set;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Document(collection = "account_role")
-public class AccountRole {
+@Document(collection = "location")
+public class Location {
     @Id
-    private String accountRoleId;
-    private Account account;
-    private Role role;
+    private String locationId;
+    private String name;
+
+    // one to Many
+    private Set<Vaccination> vaccinationList;
+
 }

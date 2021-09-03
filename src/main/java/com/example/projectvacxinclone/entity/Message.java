@@ -7,12 +7,13 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
-@Document(collection = "account_role")
-public class AccountRole {
+@AllArgsConstructor
+@Document(collection = "message")
+public class Message {
     @Id
-    private String accountRoleId;
-    private Account account;
-    private Role role;
+    private String messageId;
+    // many to one
+    private Patient patient;
+    private String content;
 }

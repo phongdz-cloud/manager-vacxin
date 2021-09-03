@@ -6,22 +6,20 @@ import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import java.util.Date;
-
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Document(collection = "import_and_export")
-public class ImportAndExport {
+@Document(collection = "invoice")
+public class Invoice {
     @Id
-    private String importAndExportId;
-    private String action;
-    private Long quantity;
-    private Date date;
+    private String invoiceId;
+    private String transactionDate;
     private Long price;
+    private String expired;
     private Boolean deleteFlag;
-    //Many to one storage
-    private Storage storage;
-    //Many To One account
-    private Account account;
+    private Long quantity;
+    //Many to one Provider
+    private Provider provider;
+    //Many To one
+    private Vaccine vaccine;
 }

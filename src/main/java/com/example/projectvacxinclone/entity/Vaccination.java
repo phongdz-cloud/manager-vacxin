@@ -24,11 +24,12 @@ public class Vaccination {
     private String description;
     private Boolean deleteFlag;
     //Many to One Vaccine
-
+    private Vaccine vaccine;
     //One To Many
     private Set<VaccinationHistory> vaccinationHistoryList;
 
     //Many To One vaccinationType;
-
+    private VaccinationType vaccinationType;
     //Many To One Location
+    private Location location;
 }
